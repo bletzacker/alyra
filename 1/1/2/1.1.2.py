@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Utilisation d'un algorithme de recherche par dichotomie itératif
