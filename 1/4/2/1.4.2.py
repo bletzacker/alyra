@@ -26,7 +26,7 @@ def conversion(decimal) :
     little_endian = '0x ' + little_endian_without_prefixe
 
     length = len(''.join(little_endian_without_prefixe.split( ))) // int(2)
-    if decimal < 224 :
+    if decimal <= 252 :
         variable_little_endian = little_endian
     elif decimal <= 2**16-1 :
         variable_little_endian = '0x fd ' + little_endian_without_prefixe + ' 00 ' * (2-length)
