@@ -41,3 +41,4 @@ print("Longueur Chaîne :",len("AAAA"),"Taille :",size,"Temps moyen (s) :", temp
 
 # Temps approximatif pour obtenir les résultats : 2 mn
 # Conclusion : La complexité est nettement supérieure pour la longueur du motif à chercher par rapport à la taille n.
+# Nous retrouvons la complexité exponentielle en fonction de la longueur du motif recherché en début de chaîne
