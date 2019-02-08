@@ -16,10 +16,8 @@ def ripemd160(key) :
 class Bitcoin_address :
     def __init__(self,key) :
         hash = b'\x00' + ripemd160(sha256(key))
-        checksum = sha256(sha256(hash)).hex()
-        hash = hash.hex()
-        hash += checksum[:8]
-        self.bitcoin_address = base58.b58encode(hash)
+        checksum = sha256(sha256(hash))
+        self.bitcoin_address = base58.b58encode(hash + checksum[:4])
 
     def __str__(self) :
         return '{}'.format(self.bitcoin_address.decode("utf-8"))
