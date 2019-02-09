@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def palindrome(string):
-    str = string
-    str = ''.join(str.split())
-    for i in range(int(len(string)/2)) :
-        if str[i] != str[len(str)-1-i] :
-            return print(string + " n'est pas un palindrome.")
-    return print(string + " est un palindrome.")
+def palindrome(string) :
+    string = ''.join(string.split())
+    if string == string[::-1] :
+        print(string + " est un palindrome.")
+        return True
+    else :
+        print(string + " n'est pas un palindrome.")
+        return False
 
 palindrome("ressasser")
 palindrome("alyra")
