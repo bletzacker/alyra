@@ -25,4 +25,6 @@ for n in range(4) :
 # Cas particulier pour n = 0 :
 # 0! = 1  par définition donc 0 opération à effectuer
 
-# Pour n >= 1, il y a n-1 opérations à effectuer. Complexité linéaire en O(n).
+# Pour n >= 1, il y a n-1 opérations à effectuer. Complexité linéaire en O(n) en opérations pour la factorielle.
+# Cependant, pour des nombres plus grand, il faut prendre en considération la complexité pour réaliser une multiplication, qui est aussi de O(n).
+# Pour le processeur, c'est donc une complexité en O(n²).
