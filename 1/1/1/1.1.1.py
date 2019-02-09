@@ -20,18 +20,18 @@ while notFound:
 
     difference = proposal - target
 
-    if difference > 0 :
-        print("Mon nombre est inférieur.")
-    else :
-        print("Mon nombre est supérieur.")
-
-    if abs(difference) <= 5 :
-        print("De plus, votre proposition est très proche, moins de 5 unités d'écart.\n")
-    elif abs(difference) <= 10 :
-        print("De plus, Votre proposition est proche, entre 6 et 10 unités d'écart.\n")
-    else :
-        print("De plus, votre proposition est éloignée de plus de 10 unités.\n")
-
     if difference == 0 :
         print("Bravo ! Vous avez trouvé le nombre que j'ai tiré aléatoirement.\n")
         notFound = False
+    else :
+        if difference > 0 :
+            print("Mon nombre est inférieur.")
+        else :
+            print("Mon nombre est supérieur.")
+
+        if abs(difference) <= 5 :
+            print("De plus, votre proposition est très proche, moins de 5 unités d'écart.\n")
+        elif abs(difference) <= 10 :
+            print("De plus, Votre proposition est proche, entre 6 et 10 unités d'écart.\n")
+        else :
+            print("De plus, votre proposition est éloignée de plus de 10 unités.\n")
