@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Exercice 1.1.1
+    Exercice 1.1.2
     Utilisation d'un algorithme de recherche par dichotomie itératif
 """
 
