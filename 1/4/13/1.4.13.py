@@ -43,8 +43,9 @@ test()
 # Quelle est cette complexité en modifiant le ScriptSig de la transaction
 # Coinbase ?
 #
-# Utiliser le champ libre (sur maximum 100 octets) ScriptSig de la transaction
-# coinbase permet d'atteindre la cible. Cependant, notre étude montre
-# une multiplication par 2 du temps en fonction de la taille de la clé pour
-# le calcul du hash donc une complexité exponentielle pour l'utilisation
-# du champ ScriptSig.
+# Utiliser le champ libre ScriptSig de la transaction coinbase permet
+# d'atteindre la cible avec la modification du hash de la
+# racine de l’arbre de Merkle (32 octets). Ainsi, la modification de la
+# transaction coinbase entraine une synchronisation de l'arbre de Merkle
+# dont la complexité moyenne est logarithmique par rapport au nombre de
+# transactions du bloc.
