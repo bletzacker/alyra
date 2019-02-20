@@ -17,7 +17,7 @@ def cible_atteinte(coefficient, exposant, hexstr_hash):
     cible_atteinte(coefficient, exposant, hexstr_hash)
     """
     hash_to_test = bytes.fromhex(hexstr_hash)
-    target = coefficient + int.from_bytes(exposant, 'big') * b'\x00'
+    target = coefficient + (int.from_bytes(exposant, 'big') - 3) * b'\x00'
     return int.from_bytes(hash_to_test, 'big') < int.from_bytes(target, 'big')
 
 def test():
@@ -25,7 +25,7 @@ def test():
     test()
     """
     hexstr_hash = "0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffff"
-    exposant, coefficient = bits2target("173218a5")
+    exposant, coefficient = bits2target("180696f4")
     print(cible_atteinte(coefficient, exposant, hexstr_hash))
 
 test()
