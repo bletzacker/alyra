@@ -3,13 +3,14 @@
 """
     Exercice 2.1.7
 """
+import math
 import datetime
 
 def bloc_reward(height) :
     """
         function bloc_reward(height)
     """
-    return 50 / (2 ** (height // 210000))
+    return math.floor((50 / (2 ** (height // 210000)) * 10**8))
 
 def total_bitcoin(height) :
     """
@@ -17,7 +18,7 @@ def total_bitcoin(height) :
     """
     total_bitcoin = 0
     for i in range(height // 210000 + 1) :
-        total_bitcoin += min(210000,height+1) * (50 / (2 ** (i)))
+        total_bitcoin += min(210000,height+1) * math.floor((50 / (2 ** (i))) * 10**8)
         height -= 210000
     return total_bitcoin
 
