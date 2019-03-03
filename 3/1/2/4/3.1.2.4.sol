@@ -36,24 +36,25 @@ contract Assemblee{
     }
 
     function proposerDecision(string decision) public {
-      if (estMembre(msg.sender)) {
-        decisions.push(Decision(decision,0,0,now));
-      }
+      require(estMembre(msg.sender), "L'adresse n'est pas membre.");
+      decisions.push(Decision(decision,0,0,now));
     }
 
     function vote(uint indice, uint vote) public returns (bool) {
-        if (estMembre(msg.sender) && pasVote(indice) && tempsVote(indice))
-          if (vote == 1) {
-              decisions[indice].votePour += 1;
-              decisions[indice].aVote[msg.sender] = true;
-              return true;
-          } else if (vote == 0) {
-              decisions[indice].voteContre += 1;
-              decisions[indice].aVote[msg.sender] = true;
-              return true;
-          } else {
-              return false;
-          }
+      require(estMembre(msg.sender), "L'adresse n'est pas membre.");
+      require(pasVote(indice), "L'adresse a déjà voté.");
+      require(tempsVote(indice), "L'adresse a dépassé le temps de vote.");
+      if (vote == 1) {
+          decisions[indice].votePour += 1;
+          decisions[indice].aVote[msg.sender] = true;
+          return true;
+      } else if (vote == 0) {
+          decisions[indice].voteContre += 1;
+          decisions[indice].aVote[msg.sender] = true;
+          return true;
+      } else {
+          return false;
+      }
     }
 
     function comptabiliser (uint indice) public view returns (int) {
