@@ -8,12 +8,12 @@ contract Assemblee{
     }
 
     function estMembre(address utilisateur) public view returns (bool) {
+        bool estMembre = false;
         for (uint i=0; i<membres.length; i++) {
             if (membres[i] == utilisateur) {
-                return true;
-            } else {
-                return false;
+                estMembre = true;
             }
         }
+        return estMembre;
     }
 }
