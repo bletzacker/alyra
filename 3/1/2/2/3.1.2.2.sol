@@ -26,7 +26,6 @@ contract Assemblee{
         descriptionsDecisions.push(decision);
         votePour.push(0);
         voteContre.push(0);
-
     }
 
     function vote(uint proposition, uint vote) public returns (bool) {

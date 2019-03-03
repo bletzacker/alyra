@@ -22,24 +22,23 @@ contract Assemblee{
     }
 
     function proposerDecision(string decision) public {
-      if (estMembre(msg.sender)) {
-        descriptionsDecisions.push(decision);
-        votePour.push(0);
-        voteContre.push(0);
-      }
+      require(estMembre(msg.sender), "L'adresse n'est pas membre.");
+      descriptionsDecisions.push(decision);
+      votePour.push(0);
+      voteContre.push(0);
+
     }
 
     function vote(uint proposition, uint vote) public returns (bool) {
-      if (estMembre(msg.sender)) {
-        if (vote == 1) {
-            votePour[proposition] += 1;
-            return true;
-        } else if (vote == 0) {
-            voteContre[proposition] += 1;
-            return true;
-        } else {
-            return false;
-        }
+      require(estMembre(msg.sender), "L'adresse n'est pas membre.");
+      if (vote == 1) {
+          votePour[proposition] += 1;
+          return true;
+      } else if (vote == 0) {
+          voteContre[proposition] += 1;
+          return true;
+      } else {
+          return false;
       }
     }
 
