@@ -12,13 +12,13 @@ contract Assemblee{
     }
 
     function estMembre(address utilisateur) public view returns (bool) {
+        bool estMembre = false;
         for (uint i=0; i<membres.length; i++) {
             if (membres[i] == utilisateur) {
-                return true;
-            } else {
-                return false;
+                estMembre = true;
             }
         }
+        return estMembre;
     }
 
     function proposerDecision(string decision) public {
@@ -30,14 +30,16 @@ contract Assemblee{
     }
 
     function vote(uint proposition, uint vote) public returns (bool) {
-      if (vote == 1) {
-          votePour[proposition] += 1;
-          return true;
-      } else if (vote == 0) {
-          voteContre[proposition] += 1;
-          return true;
-      } else {
-          return false;
+      if (estMembre(msg.sender)) {
+        if (vote == 1) {
+            votePour[proposition] += 1;
+            return true;
+        } else if (vote == 0) {
+            voteContre[proposition] += 1;
+            return true;
+        } else {
+            return false;
+        }
       }
     }
 }
