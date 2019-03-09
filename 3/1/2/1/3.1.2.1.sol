@@ -1,6 +1,7 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.5;
 
-contract Assemblee{
+contract Assemblee {
+
     address[] membres;
 
     function rejoindre() public {
@@ -8,12 +9,10 @@ contract Assemblee{
     }
 
     function estMembre(address utilisateur) public view returns (bool) {
-        bool estMembre = false;
         for (uint i=0; i<membres.length; i++) {
             if (membres[i] == utilisateur) {
-                estMembre = true;
+                return true;
             }
         }
-        return estMembre;
     }
 }
