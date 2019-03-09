@@ -1,8 +1,8 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
 
-contract Assemblee{
+contract Assemblee {
+
     address[] membres;
-
     string[] public descriptionsDecisions;
     uint[] public votePour;
     uint[] public voteContre;
@@ -12,32 +12,31 @@ contract Assemblee{
     }
 
     function estMembre(address utilisateur) public view returns (bool) {
-        bool estMembre = false;
         for (uint i=0; i<membres.length; i++) {
             if (membres[i] == utilisateur) {
-                estMembre = true;
+                return true;
             }
         }
-        return estMembre;
     }
 
-    function proposerDecision(string decision) public {
+    modifier onlyMember() {
         require(estMembre(msg.sender), "L'adresse n'est pas membre.");
+        _;
+    }
+
+    function proposerDecision(string memory decision) public onlyMember {
         descriptionsDecisions.push(decision);
         votePour.push(0);
         voteContre.push(0);
     }
 
-    function vote(uint proposition, uint vote) public returns (bool) {
-        require(estMembre(msg.sender), "L'adresse n'est pas membre.");
+    function voter(uint proposition, uint vote) public onlyMember {
+        require(vote == 1 || vote == 0, "Sens du vote : 0 ou 1");
         if (vote == 1) {
             votePour[proposition] += 1;
-            return true;
-        } else if (vote == 0) {
-            voteContre[proposition] += 1;
-            return true;
         } else {
-            return false;
+            voteContre[proposition] += 1;
         }
     }
+
 }
