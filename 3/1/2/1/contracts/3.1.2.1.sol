@@ -1,4 +1,4 @@
-pragma solidity ^0.5.5;
+pragma solidity ^0.5.0;
 
 contract Assemblee {
 
@@ -15,4 +15,5 @@ contract Assemblee {
             }
         }
     }
+
 }
