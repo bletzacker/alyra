@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
 import "./AvecMembres.sol";
 import "./AvecDecisions.sol";
 
@@ -7,17 +7,16 @@ contract AvecAdministrateurs is AvecMembres, AvecDecisions {
     address[] administrateurs;
 
     function estAdministrateur(address utilisateur) public view returns (bool) {
-        bool estAdministrateur = false;
         for (uint i=0; i<administrateurs.length; i++) {
             if (administrateurs[i] == utilisateur) {
-                estAdministrateur = true;
+                return true;
             }
         }
-        return estAdministrateur;
     }
 
     function nommerAdministrateur(address membre) public {
         require(estAdministrateur(msg.sender), "L'adresse n'est pas administrateur.");
+        require(! estAdministrateur(membre), "L'adresse est déjà administrateur");
         require(estMembre(membre), "L'adresse n'est pas membre.");
         administrateurs.push(membre);
     }
@@ -25,7 +24,9 @@ contract AvecAdministrateurs is AvecMembres, AvecDecisions {
     function demissionnerAdministrateur() public {
         for (uint i=0; i<administrateurs.length; i++) {
             if (administrateurs[i] == msg.sender) {
-                delete administrateurs[i];
+                administrateurs[i] = administrateurs[administrateurs.length - 1];
+                delete administrateurs[administrateurs.length - 1];
+                administrateurs.length--;
             }
         }
     }
@@ -42,7 +43,9 @@ contract AvecAdministrateurs is AvecMembres, AvecDecisions {
               membres[i].blame += 1;
           }
           if (membres[i].blame == 2) {
-              delete membres[i];
+            membres[i] = membres[membres.length - 1];
+            delete membres[membres.length - 1];
+            membres.length--;
           }
       }
     }

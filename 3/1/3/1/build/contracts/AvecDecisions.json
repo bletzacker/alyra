@@ -1,0 +1,553 @@
+{
+  "contractName": "AvecDecisions",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058209575f7c2a347d8eb57c43f4a63999987ca82463af27faddbcf025843b66db0690029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058209575f7c2a347d8eb57c43f4a63999987ca82463af27faddbcf025843b66db0690029",
+  "sourceMap": "25:220:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:220:2;;;;;;;",
+  "deployedSourceMap": "25:220:2:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\n\ncontract AvecDecisions {\n\n  struct Decision {\n      string description;\n      uint votePour;\n      uint voteContre;\n      uint start;\n      bool open;\n      mapping(address => bool) aVote;\n  }\n\n  Decision[] decisions;\n\n}\n",
+  "sourcePath": "/Users/laurent/Documents/GitHub/alyra/3/1/3/1/contracts/AvecDecisions.sol",
+  "ast": {
+    "absolutePath": "/Users/laurent/Documents/GitHub/alyra/3/1/3/1/contracts/AvecDecisions.sol",
+    "exportedSymbols": {
+      "AvecDecisions": [
+        441
+      ]
+    },
+    "id": 442,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 422,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 441,
+        "linearizedBaseContracts": [
+          441
+        ],
+        "name": "AvecDecisions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AvecDecisions.Decision",
+            "id": 437,
+            "members": [
+              {
+                "constant": false,
+                "id": 424,
+                "name": "description",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "77:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 423,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "77:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 426,
+                "name": "votePour",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "103:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 425,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "103:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 428,
+                "name": "voteContre",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "124:15:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 427,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "124:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 430,
+                "name": "start",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "147:10:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 429,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "147:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 432,
+                "name": "open",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "165:9:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 431,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "165:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 436,
+                "name": "aVote",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "182:30:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "typeName": {
+                  "id": 435,
+                  "keyType": {
+                    "id": 433,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "190:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "182:24:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                    "typeString": "mapping(address => bool)"
+                  },
+                  "valueType": {
+                    "id": 434,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "201:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Decision",
+            "nodeType": "StructDefinition",
+            "scope": 441,
+            "src": "53:164:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 440,
+            "name": "decisions",
+            "nodeType": "VariableDeclaration",
+            "scope": 441,
+            "src": "221:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Decision_$437_storage_$dyn_storage",
+              "typeString": "struct AvecDecisions.Decision[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 438,
+                "name": "Decision",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 437,
+                "src": "221:8:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Decision_$437_storage_ptr",
+                  "typeString": "struct AvecDecisions.Decision"
+                }
+              },
+              "id": 439,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "221:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Decision_$437_storage_$dyn_storage_ptr",
+                "typeString": "struct AvecDecisions.Decision[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 442,
+        "src": "25:220:2"
+      }
+    ],
+    "src": "0:246:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/laurent/Documents/GitHub/alyra/3/1/3/1/contracts/AvecDecisions.sol",
+    "exportedSymbols": {
+      "AvecDecisions": [
+        441
+      ]
+    },
+    "id": 442,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 422,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 441,
+        "linearizedBaseContracts": [
+          441
+        ],
+        "name": "AvecDecisions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AvecDecisions.Decision",
+            "id": 437,
+            "members": [
+              {
+                "constant": false,
+                "id": 424,
+                "name": "description",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "77:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 423,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "77:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 426,
+                "name": "votePour",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "103:13:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 425,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "103:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 428,
+                "name": "voteContre",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "124:15:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 427,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "124:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 430,
+                "name": "start",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "147:10:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 429,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "147:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 432,
+                "name": "open",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "165:9:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 431,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "165:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 436,
+                "name": "aVote",
+                "nodeType": "VariableDeclaration",
+                "scope": 437,
+                "src": "182:30:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "typeName": {
+                  "id": 435,
+                  "keyType": {
+                    "id": 433,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "190:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "182:24:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                    "typeString": "mapping(address => bool)"
+                  },
+                  "valueType": {
+                    "id": 434,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "201:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Decision",
+            "nodeType": "StructDefinition",
+            "scope": 441,
+            "src": "53:164:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 440,
+            "name": "decisions",
+            "nodeType": "VariableDeclaration",
+            "scope": 441,
+            "src": "221:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Decision_$437_storage_$dyn_storage",
+              "typeString": "struct AvecDecisions.Decision[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 438,
+                "name": "Decision",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 437,
+                "src": "221:8:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Decision_$437_storage_ptr",
+                  "typeString": "struct AvecDecisions.Decision"
+                }
+              },
+              "id": 439,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "221:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Decision_$437_storage_$dyn_storage_ptr",
+                "typeString": "struct AvecDecisions.Decision[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 442,
+        "src": "25:220:2"
+      }
+    ],
+    "src": "0:246:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-03-10T16:38:01.516Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

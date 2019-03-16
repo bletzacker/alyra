@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
 
 contract AvecMembres {
 
@@ -10,16 +10,16 @@ contract AvecMembres {
     Membre[] membres;
 
     function estMembre(address utilisateur) public view returns (bool) {
-        bool estMembre = false;
         for (uint i=0; i<membres.length; i++) {
             if (membres[i].id == utilisateur) {
-                estMembre = true;
+                return true;
             }
         }
-        return estMembre;
     }
 
     function rejoindre() public {
         membres.push(Membre(msg.sender,0));
     }
+
+
 }
